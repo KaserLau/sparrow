@@ -1,0 +1,12 @@
+2018-03-18-18-05 [http-nio-8080-exec-2] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-07 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-14 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-14 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-14 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [WARN] - Warning lognum1num2=2so far, so go
+  2018-03-18-18-15 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [INFO] - Info lognum1num2=2so far, so go
+  2018-03-18-18-15 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-15 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-15 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [ERROR] - Error lognum1num2=2so far, so go
+  2018-03-18-18-15 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [WARN] - Warning lognum1num2=2so far, so go
+  2018-03-18-18-15 [http-nio-8080-exec-1] [com.better.kaser.sparrow.controller.LoggerControllor] [WARN] - Warning lognum1num2=2so far, so go
+  
