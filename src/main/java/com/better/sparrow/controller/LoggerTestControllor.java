@@ -1,13 +1,14 @@
 package com.better.sparrow.controller;
 
 import org.apache.log4j.Logger;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value="/log")
-public class LoggerControllor {
-    private Logger logger = Logger.getLogger(LoggerControllor.class);
-    @GetMapping(value="/get/info")
+public class LoggerTestControllor {
+    private Logger logger = Logger.getLogger(LoggerTestControllor.class);
+    @GetMapping(value="/get/info",produces = MediaType.APPLICATION_JSON_VALUE)
     public String shareLog(
             @RequestParam(name = "num1") String num1,
             @RequestParam(name = "num2") String num2

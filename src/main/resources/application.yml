@@ -1,0 +1,5 @@
+server:
+  port:
+spring
+  profiles
+    active=${env:local}
