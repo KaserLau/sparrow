@@ -1,5 +1,10 @@
 package com.better.sparrow.entity;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,7 +16,11 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "tb_user")
-public class User implements Serializable {
+@Setter
+@Getter
+@ToString
+@EqualsAndHashCode
+public class UserEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,5 +28,4 @@ public class User implements Serializable {
     private String loginName;
     private char sex;
     private int age;
-
 }
