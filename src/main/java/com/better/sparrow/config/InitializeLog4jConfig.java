@@ -1,4 +1,4 @@
-package com.better.kaser.sparrow.config;
+package com.better.sparrow.config;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.boot.SpringApplication;

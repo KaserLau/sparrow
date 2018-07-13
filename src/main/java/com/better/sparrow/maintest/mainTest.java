@@ -1,9 +1,6 @@
-package com.better.kaser.sparrow.maintest;
+package com.better.sparrow.maintest;
 
-import com.better.kaser.sparrow.basicKnowledgePractice.ArrayStringshortPractice;
-import com.better.kaser.sparrow.basicKnowledgePractice.BubbleSortPractice;
-import com.better.kaser.sparrow.basicKnowledgePractice.SimpleSelectionSortPractice;
-import com.better.kaser.sparrow.basicKnowledgePractice.StraightInsertionSortingParctice;
+import com.better.sparrow.basicKnowledgePractice.SimpleSelectionSortPractice;
 
 public class mainTest {
 

@@ -1,4 +1,4 @@
-package com.better.kaser.sparrow;
+package com.better.sparrow;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

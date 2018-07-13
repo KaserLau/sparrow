@@ -1,4 +1,4 @@
-package com.better.kaser.sparrow.controller;
+package com.better.sparrow.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
