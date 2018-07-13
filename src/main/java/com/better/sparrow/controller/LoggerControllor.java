@@ -18,7 +18,6 @@ public class LoggerControllor {
         logger.debug("Debug log"+"num1" +"num2" + "=" + addition + "so far, so go");
         logger.error("Error log"+"num1" +"num2" + "=" + addition + "so far, so go");
         logger.warn("Warning log"+"num1" +"num2" + "=" + addition + "so far, so go");
-        String responsInfo = "num1" + " + "+"num2 " +" = " + addition;
-        return responsInfo;
+        return String.valueOf(addition);
     }
 }
