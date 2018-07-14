@@ -41,7 +41,7 @@ public class UserService {
 
     @Transactional
     public void update(UserEntity user){
-        user.setUsername("孙悟空");
+        user.setUserName("孙悟空");
         user.setLoginName("soga");
     }
 
