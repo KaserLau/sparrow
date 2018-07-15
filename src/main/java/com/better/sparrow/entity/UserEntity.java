@@ -26,6 +26,6 @@ public class UserEntity implements Serializable {
     private int id;
     private String userName;
     private String loginName;
-    private char sex;
+    private String sex;
     private int age;
 }

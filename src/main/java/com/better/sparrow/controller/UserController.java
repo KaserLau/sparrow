@@ -18,29 +18,53 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @PostMapping("/save")
-    public String save(){
-        UserEntity user = new UserEntity();
-        user.setAge(18);
-        user.setSex('男');
-        user.setLoginName("testone");
-        user.setUserName("player");
+    /**
+     * @Author: Kaser.Lau
+     * @Date: 2018/7/15
+     * @Description: insert data using post mapping
+     * @Param:
+     * @return:
+     **/
+    @PostMapping(value = "/save",produces = "application/json")
+    public String save(@RequestBody UserEntity user){
         userService.save(user);
         return "保存数据成功";
     }
 
+    /**
+     * @Author: Kaser.Lau
+     * @Date: 2018/7/15
+     * @Description: Get data using get mapping
+     * @Param:
+     * @return:
+     **/
     @GetMapping("/selectAll")
     public Iterable<UserEntity> readAll(){
         return userService.readAll();
     }
 
+    /**
+     * @Author: Kaser.Lau
+     * @Date: 2018/7/15
+     * @Description: Get data using get mapping
+     * @Param:
+     * @return:
+     **/
     @GetMapping("/selectById")
-    public UserEntity readdById(){
-        int id = 1;
+    public UserEntity readdById(@RequestParam("id") int id){
         return userService.readdById(id);
     }
 
+    /**
+     * @Author: Kaser.Lau
+     * @Date: 2018/7/15
+     * @Description: update data using put mapping
+     * @Param:
+     * @return:
+     **/
     @PutMapping("/update")
-    public void update(UserEntity user){
+    public void update(@RequestParam("id") int id,
+                       @RequestBody UserEntity user){
+        userService.update(id,user);
     }
 }

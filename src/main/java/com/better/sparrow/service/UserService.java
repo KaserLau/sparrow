@@ -40,9 +40,12 @@ public class UserService {
     }
 
     @Transactional
-    public void update(UserEntity user){
-        user.setUserName("孙悟空");
-        user.setLoginName("soga");
+    public UserEntity update(int id,UserEntity user){
+        user.setId(id);
+        user.setAge(user.getAge());
+        user.setSex(user.getSex());
+        user.setUserName(user.getUserName());
+        user.setLoginName(user.getLoginName());
+        return userRepository.save(user);
     }
-
 }
