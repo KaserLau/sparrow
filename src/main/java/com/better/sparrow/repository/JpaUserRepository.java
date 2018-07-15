@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * @Date : Create in 6:41 PM 7/13/2018
  * @Modified By :
  */
-public interface UserRepository extends CrudRepository<UserEntity,Integer> {
+public interface JpaUserRepository extends CrudRepository<UserEntity,Integer> {
 }

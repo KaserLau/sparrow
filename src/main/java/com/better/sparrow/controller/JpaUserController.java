@@ -42,7 +42,6 @@ public class JpaUserController {
     public Iterable<UserEntity> readAll(){
         return jpaUserService.readAll();
     }
-
     /**
      * @Author: Kaser.Lau
      * @Date: 2018/7/15
@@ -66,5 +65,17 @@ public class JpaUserController {
     public void update(@RequestParam("id") int id,
                        @RequestBody UserEntity user){
         jpaUserService.update(id,user);
+    }
+    
+    /** 
+     * @Author: Kaser.Lau
+     * @Date: 2018/7/15 
+     * @Description: 
+     * @Param:  
+     * @return:  
+     **/ 
+    @GetMapping("/delete")
+    public void delete(@RequestParam("id") int id){
+        jpaUserService.delete(id);
     }
 }

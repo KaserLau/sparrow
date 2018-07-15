@@ -1,7 +1,7 @@
 package com.better.sparrow.service;
 
 import com.better.sparrow.entity.UserEntity;
-import com.better.sparrow.repository.UserRepository;
+import com.better.sparrow.repository.JpaUserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,24 +18,24 @@ import java.util.Optional;
 @Service
 public class JpaUserService {
     @Resource
-    private UserRepository userRepository;
+    private JpaUserRepository jpaUserRepository;
 
     @Transactional
     public UserEntity save(UserEntity user){
-        return userRepository.save(user);
+        return jpaUserRepository.save(user);
     }
 
     @Transactional
     public void delete(int id){
-        userRepository.deleteById(id);
+        jpaUserRepository.deleteById(id);
     }
 
     public Iterable<UserEntity> readAll(){
-        return userRepository.findAll();
+        return jpaUserRepository.findAll();
     }
 
     public UserEntity readdById(int id){
-        Optional<UserEntity> op = userRepository.findById(id);
+        Optional<UserEntity> op = jpaUserRepository.findById(id);
         return op.get();
     }
 
@@ -46,6 +46,6 @@ public class JpaUserService {
         user.setSex(user.getSex());
         user.setUserName(user.getUserName());
         user.setLoginName(user.getLoginName());
-        return userRepository.save(user);
+        return jpaUserRepository.save(user);
     }
 }
