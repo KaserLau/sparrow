@@ -1,7 +1,7 @@
 package com.better.sparrow.controller;
 
 import com.better.sparrow.entity.UserEntity;
-import com.better.sparrow.service.UserService;
+import com.better.sparrow.service.JpaUserService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,9 +14,9 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("user")
-public class UserController {
+public class JpaUserController {
     @Resource
-    private UserService userService;
+    private JpaUserService jpaUserService;
 
     /**
      * @Author: Kaser.Lau
@@ -27,7 +27,7 @@ public class UserController {
      **/
     @PostMapping(value = "/save",produces = "application/json")
     public String save(@RequestBody UserEntity user){
-        userService.save(user);
+        jpaUserService.save(user);
         return "保存数据成功";
     }
 
@@ -40,7 +40,7 @@ public class UserController {
      **/
     @GetMapping("/selectAll")
     public Iterable<UserEntity> readAll(){
-        return userService.readAll();
+        return jpaUserService.readAll();
     }
 
     /**
@@ -52,7 +52,7 @@ public class UserController {
      **/
     @GetMapping("/selectById")
     public UserEntity readdById(@RequestParam("id") int id){
-        return userService.readdById(id);
+        return jpaUserService.readdById(id);
     }
 
     /**
@@ -65,6 +65,6 @@ public class UserController {
     @PutMapping("/update")
     public void update(@RequestParam("id") int id,
                        @RequestBody UserEntity user){
-        userService.update(id,user);
+        jpaUserService.update(id,user);
     }
 }
