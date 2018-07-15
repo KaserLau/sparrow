@@ -3,7 +3,6 @@ package com.better.sparrow.repository;
 import com.better.sparrow.entity.UserEntity;
 import org.apache.ibatis.annotations.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -13,14 +12,13 @@ import java.util.List;
  * @Modified By :
  */
 public interface MyBatisUserRespository {
-    @Transactional
+
     @Insert("insert into tb_user(age,login_name,sex,user_name)"+"values(#{age},#{loginName},#{sex},#{userName})")
     int insertUser(UserEntity user);
 
-    @Transactional
     @Insert("insert into tb_user(age,login_name,sex,user_name)"+"values(#{age},#{loginName},#{sex},#{userName})")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
-    void inserGetKey(UserEntity user);
+    void insertGetKey(UserEntity user);
 
     @Select("select * from tb_user where user_name = #{userName}")
     @ResultMap("userResult")
@@ -36,7 +34,6 @@ public interface MyBatisUserRespository {
     })
     List<UserEntity> findAll();
 
-    @Transactional
     @Delete("delete from tb_user where id = #{id}")
     void delete(final Integer id);
 
