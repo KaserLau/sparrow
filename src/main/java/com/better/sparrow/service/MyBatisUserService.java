@@ -2,6 +2,7 @@ package com.better.sparrow.service;
 
 import com.better.sparrow.entity.UserEntity;
 import com.better.sparrow.repository.MyBatisUserRespository;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Create Date : 3:38 PM 2018/7/15
  * @Modified By :
  */
+@Service
 public class MyBatisUserService {
     @Resource
     private MyBatisUserRespository myBatisUserRespository;
@@ -45,8 +47,8 @@ public class MyBatisUserService {
     }
 
     @Transactional
-    public void update(final UserEntity user){
-        myBatisUserRespository.update(user);
+    public void update(UserEntity user,int id){
+        myBatisUserRespository.update(user,id);
     }
 
 }

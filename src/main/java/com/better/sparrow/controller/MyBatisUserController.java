@@ -20,17 +20,17 @@ public class MyBatisUserController {
     private MyBatisUserService myBatisUserService;
 
     @PostMapping(value ="/insert", produces = "application/json")
-    public int insertUser(UserEntity user){
+    public int insertUser(@RequestBody UserEntity user){
         return myBatisUserService.insertUser(user);
     }
 
     @PostMapping(value = "/insertGetKey",produces = "application/json")
-    public void insertGetKey(UserEntity user){
+    public void insertGetKey(@RequestBody UserEntity user){
         myBatisUserService.insertGetKey(user);
     }
 
-    @GetMapping(value = "/selectByUserName/{userName}")
-    public UserEntity selectByUserName(@PathVariable String userName){
+    @GetMapping(value = "/selectByUserName")
+    public UserEntity selectByUserName(@RequestParam("userName") String userName){
         return myBatisUserService.selectByUserName(userName);
     }
 
@@ -39,18 +39,19 @@ public class MyBatisUserController {
         return myBatisUserService.findAll();
     }
 
-    @GetMapping(value = "/selectById/{id}")
-    public UserEntity findUserById(@PathVariable int id){
+    @GetMapping(value = "/selectById")
+    public UserEntity findUserById(@RequestParam("id") int id){
         return myBatisUserService.findUserById(id);
     }
 
-    @GetMapping(value = "/deleteById/{id}")
-    public void delete(final Integer id){
+    @GetMapping(value = "/deleteById")
+    public void delete(@RequestParam("id") final Integer id){
         myBatisUserService.delete(id);
     }
 
-    @PutMapping(value = "/updateUser")
-    public void update(final UserEntity user){
-        myBatisUserService.update(user);
+    @PutMapping(value = "/updateUser",produces = "application/json")
+    public void update(@RequestParam("id") int id,
+                       @RequestBody UserEntity user){
+        myBatisUserService.update(user,id);
     }
 }

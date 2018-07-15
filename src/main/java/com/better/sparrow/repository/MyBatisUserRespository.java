@@ -41,6 +41,6 @@ public interface MyBatisUserRespository {
     @ResultMap("userResult")
     UserEntity findUserById(int id);
 
-    @Update("update tb_user set user_name = #{userName},login_name = #{loginName} where id = #{id}")
-    void update(final UserEntity user);
+    @Update("update tb_user set age=#{age},login_name=#{loginName},sex=#{sex},user_name=#{userName} where id=#{id}")
+    void update(UserEntity user,int id);
 }
