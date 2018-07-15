@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @Modified By :
  */
 @RestController
-@RequestMapping("user")
+@RequestMapping("/jpa/user")
 public class JpaUserController {
     @Resource
     private JpaUserService jpaUserService;
