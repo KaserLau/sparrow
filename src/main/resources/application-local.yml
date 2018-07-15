@@ -18,6 +18,7 @@ spring:
     database: mysql
     show-sql: true
     hibernate:
+    ## update , The database table is updated when the mapping entity changes
       ddl-auto: update
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
