@@ -25,7 +25,7 @@ public class SimpleSelectionSortPractice {
             }
             arr[position]=arr[i];//进行交换
             arr[i]=value;
-            printLine(arr,i);
+            this.printLine(arr,i);
         }
     }
     //打印每次的排序结果

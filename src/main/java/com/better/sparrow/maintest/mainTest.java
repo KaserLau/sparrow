@@ -34,5 +34,12 @@ public class mainTest {
         System.out.println("7.简单选择排序");
         SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
         simpleSelectionSort.selectSort();
+
+        for(int i = 0 ; i< 10 ;i++){
+            System.out.println(i);
+            if(i == 2){
+                break;
+            }
+        }
     }
 }

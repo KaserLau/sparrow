@@ -20,6 +20,8 @@ import java.io.Serializable;
 @Getter
 @ToString
 @EqualsAndHashCode
+//@Data
+//该注解使用在类上，该注解是最常用的注解，它结合了@ToString，@EqualsAndHashCode， @Getter和@Setter。
 public class UserEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
