@@ -27,9 +27,9 @@ public class mainTest {
 //        BubbleSortPractice bubbleSortPractice = new BubbleSortPractice();
 //        bubbleSortPractice.bubbleSort();
 
-//        System.out.println("6.直接插入排序算法");
-//        StraightInsertionSortingParctice insertionSorting = new StraightInsertionSortingParctice();
-//        insertionSorting.straightInsertionSorting(arr);
+        System.out.println("6.直接插入排序算法");
+        StraightInsertionSortingParctice insertionSorting = new StraightInsertionSortingParctice();
+        insertionSorting.straightInsertionSorting();
 
         System.out.println("7.简单选择排序");
         SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();

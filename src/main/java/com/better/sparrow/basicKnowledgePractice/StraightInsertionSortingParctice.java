@@ -2,7 +2,10 @@ package com.better.sparrow.basicKnowledgePractice;
 
 /**
  * @Author : yaobin.a.liu
- * @Description : 直接插入排序,在已经排好顺序的int类型数组中插入一个数，再把新的数组排序
+ * @Description :
+ *      假设待排序的数据是数组A[1….n]。初始时，A[1]自成1个有序区，无序区为A[2….n]。
+ * 在排序的过程中，依次将A[i] (i=2,3,….,n)从后往前插入到前面已排好序的子数组A[1,…,i-1]中的适当位置，
+ * 当所有的A[i] 插入完毕，数组A中就包含了已排好序的输出序列。
  * @Date : Create in 10:19 AM 7/2/2018
  * @Modified By :
  */
@@ -16,21 +19,22 @@ public class StraightInsertionSortingParctice {
      * @Exception :
      * @Description : 直接插入排序
      */
-    public void straightInsertionSorting(int[] arr) {
-        int Arrlength=arr.length;
-        for(int i= 1; i<Arrlength; i++){
-            if(arr[i] < arr[i-1]){//若第i个元素大于i-1元素，直接插入。小于的话，移动有序表后插入
-                int j= i-1;
-                int temp = arr[i];//复制为哨兵，即存储待排序元素
-                while(temp<arr[j]){//查找在有序表的插入位置
+    public void straightInsertionSorting() {
+        int[] arr = {11,10,55,78,100,111,45,56,79,90,345,1000};//创建一个数组arr
+        int Arrlength = arr.length;
+        System.out.println(Arrlength);
+        int temp;
+        int j;
+        for(int i=1;i < Arrlength;i++){
+            temp = arr[i];
+            for(j=i-1;j >= 0;j--){
+                if(arr[j] > temp){
                     arr[j+1] = arr[j];
-                    j--;//元素后移
-                    if(j<0) {
-                        break;
-                    }
+                }else{
+                    break;
                 }
-                arr[j+1] = temp;//插入到正确位置
             }
+            arr[j+1] = temp;//后一个换位置
             printLine(arr,i);//打印每趟排序的结果
         }
     }
