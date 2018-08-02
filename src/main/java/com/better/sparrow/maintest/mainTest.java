@@ -1,6 +1,5 @@
 package com.better.sparrow.maintest;
 
-import com.better.sparrow.basicKnowledgePractice.AscendingSortForArraysPractice;
 import com.better.sparrow.basicKnowledgePractice.SimpleSelectionSortPractice;
 import com.better.sparrow.basicKnowledgePractice.StraightInsertionSortingParctice;
 
@@ -33,6 +32,16 @@ public class mainTest {
 //        StraightInsertionSortingParctice insertionSorting = new StraightInsertionSortingParctice();
 //        insertionSorting.straightInsertionSorting();
 
+        System.out.println("7.简单选择排序");
+        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
+        simpleSelectionSort.selectSort();
+
+        for(int i = 0 ; i< 10 ;i++){
+            System.out.println(i);
+            if(i == 2){
+                break;
+            }
+        }
 //        System.out.println("7.简单选择排序");
 //        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
 //        simpleSelectionSort.selectSort();
