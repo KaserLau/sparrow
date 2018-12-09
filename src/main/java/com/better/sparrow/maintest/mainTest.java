@@ -1,6 +1,7 @@
 package com.better.sparrow.maintest;
 
 import com.better.sparrow.javaBasiceKnowledgePractice.CompileTimePolymorphicPractice;
+import com.better.sparrow.javaBasiceKnowledgePractice.ExecutionTimePolymorphicPractice;
 import com.better.sparrow.javaBasiceKnowledgePractice.PolymorphicPractice;
 
 public class mainTest {
@@ -60,7 +61,14 @@ public class mainTest {
 //        sc.sub();
         CompileTimePolymorphicPractice compileTimePolymorphicPractice = new CompileTimePolymorphicPractice();
         compileTimePolymorphicPractice.testCompileTimePolymorphic();
+
+        ExecutionTimePolymorphicPractice executionTimePolymorphicPractice = new ExecutionTimePolymorphicPractice();
+        executionTimePolymorphicPractice.executiuonTime();
+        executionTimePolymorphicPractice.executiuonTime("参数1");
+        executionTimePolymorphicPractice.executiuonTime("参数1","参数2");
+        executionTimePolymorphicPractice.executiuonTime("参数1","参数2","参数3");
     }
+
 }
 
 
