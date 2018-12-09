@@ -1,6 +1,7 @@
 package com.better.sparrow.maintest;
 
 import com.better.sparrow.basicKnowledgePractice.AscendingSortForArraysPractice;
+import com.better.sparrow.basicKnowledgePractice.PolymorphicPractice;
 import com.better.sparrow.basicKnowledgePractice.SimpleSelectionSortPractice;
 import com.better.sparrow.basicKnowledgePractice.StraightInsertionSortingParctice;
 
@@ -8,7 +9,7 @@ public class mainTest {
 
     public static void main(String[] args) {
 
-        int arr[]={3,1,5,7,2,4,9,6};
+//        int arr[]={3,1,5,7,2,4,9,6};
 //        System.out.println("1.测试为List中的String元素按字母排序的方法实现");
 //        ListSortPractice listSortByString = new ListSortPractice();
 //        listSortByString.sortByList();
@@ -33,22 +34,33 @@ public class mainTest {
 //        StraightInsertionSortingParctice insertionSorting = new StraightInsertionSortingParctice();
 //        insertionSorting.straightInsertionSorting();
 
-        System.out.println("7.简单选择排序");
-        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
-        simpleSelectionSort.selectSort();
-
-        for(int i = 0 ; i< 10 ;i++){
-            System.out.println(i);
-            if(i == 2){
-                break;
-            }
-        }
+//        System.out.println("7.简单选择排序");
+//        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
+//        simpleSelectionSort.selectSort();
+//
+//        for(int i = 0 ; i< 10 ;i++){
+//            System.out.println(i);
+//            if(i == 2){
+//                break;
+//            }
+//        }
 //        System.out.println("7.简单选择排序");
 //        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
 //        simpleSelectionSort.selectSort();
 
 
-        AscendingSortForArraysPractice ascendingSort = new AscendingSortForArraysPractice();
-        ascendingSort.ascendingSort();
+//        AscendingSortForArraysPractice ascendingSort = new AscendingSortForArraysPractice();
+//        ascendingSort.ascendingSort();
+        PolymorphicPractice.BaseClass bc = new PolymorphicPractice.BaseClass();
+        System.out.println(bc.books);
+        bc.base();
+        bc.test();
+        PolymorphicPractice.SubClass sc = new PolymorphicPractice.SubClass();
+        System.out.println(sc.books);
+        sc.base();
+        sc.test();
+        sc.sub();
     }
 }
+
+
