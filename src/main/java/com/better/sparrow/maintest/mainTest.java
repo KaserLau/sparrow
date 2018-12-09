@@ -1,5 +1,6 @@
 package com.better.sparrow.maintest;
 
+import com.better.sparrow.javaBasiceKnowledgePractice.CompileTimePolymorphicPractice;
 import com.better.sparrow.javaBasiceKnowledgePractice.PolymorphicPractice;
 
 public class mainTest {
@@ -48,15 +49,17 @@ public class mainTest {
 
 //        AscendingSortForArraysPractice ascendingSort = new AscendingSortForArraysPractice();
 //        ascendingSort.ascendingSort();
-        PolymorphicPractice.BaseClass bc = new PolymorphicPractice.BaseClass();
-        System.out.println(bc.books);
-        bc.base();
-        bc.test();
-        PolymorphicPractice.SubClass sc = new PolymorphicPractice.SubClass();
-        System.out.println(sc.books);
-        sc.base();
-        sc.test();
-        sc.sub();
+//        PolymorphicPractice.BaseClass bc = new PolymorphicPractice.BaseClass();
+//        System.out.println(bc.books);
+//        bc.base();
+//        bc.test();
+//        PolymorphicPractice.SubClass sc = new PolymorphicPractice.SubClass();
+//        System.out.println(sc.books);
+//        sc.base();
+//        sc.test();
+//        sc.sub();
+        CompileTimePolymorphicPractice compileTimePolymorphicPractice = new CompileTimePolymorphicPractice();
+        compileTimePolymorphicPractice.testCompileTimePolymorphic();
     }
 }
 
