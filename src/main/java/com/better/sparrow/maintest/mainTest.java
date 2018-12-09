@@ -1,9 +1,6 @@
 package com.better.sparrow.maintest;
 
-import com.better.sparrow.basicKnowledgePractice.AscendingSortForArraysPractice;
-import com.better.sparrow.basicKnowledgePractice.PolymorphicPractice;
-import com.better.sparrow.basicKnowledgePractice.SimpleSelectionSortPractice;
-import com.better.sparrow.basicKnowledgePractice.StraightInsertionSortingParctice;
+import com.better.sparrow.javaBasiceKnowledgePractice.PolymorphicPractice;
 
 public class mainTest {
 

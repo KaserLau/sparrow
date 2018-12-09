@@ -1,4 +1,4 @@
-package com.better.sparrow.basicKnowledgePractice;
+package com.better.sparrow.javaBasiceKnowledgePractice;
 
 /**
  * @Author : Kaser.Lau
