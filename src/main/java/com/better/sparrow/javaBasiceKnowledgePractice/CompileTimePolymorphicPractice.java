@@ -16,5 +16,9 @@ public class CompileTimePolymorphicPractice {
         System.out.println("获取SubClass的books参数"+ subClass.books);
         subClass.test();
         subClass.sub();
+        //调用父类的base()方法
+        subClass.base();
+        SuperClass compileTimePolymorphic = new SubClass();
+        ((SubClass) compileTimePolymorphic).sub();
     }
 }

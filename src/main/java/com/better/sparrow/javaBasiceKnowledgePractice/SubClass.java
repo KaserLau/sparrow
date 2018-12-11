@@ -6,7 +6,7 @@ package com.better.sparrow.javaBasiceKnowledgePractice;
  * @Create Date : 7:36 PM 2018/12/9
  * @Modified By :
  */
-public class SubClass {
+public class SubClass extends SuperClass{
     //重新定义一个book实例变量隐藏父类的book实例变量
     public String books = "这是该子类中的book参数，类型为：String";
     public void test(){

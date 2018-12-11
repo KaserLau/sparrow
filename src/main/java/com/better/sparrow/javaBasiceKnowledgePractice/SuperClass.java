@@ -8,6 +8,9 @@ package com.better.sparrow.javaBasiceKnowledgePractice;
  */
 public class SuperClass {
     public int books = 6;
+    public SuperClass(){
+        System.out.println("这是父类的无参构造器！");
+    }
     public void base(){
         System.out.println("这是父类的Base方法！");
     }
