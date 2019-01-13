@@ -1,72 +1,48 @@
 package com.better.sparrow.maintest;
 
+import com.better.sparrow.bean.Item;
 import com.better.sparrow.javaBasiceKnowledgePractice.CompileTimePolymorphicPractice;
 import com.better.sparrow.javaBasiceKnowledgePractice.ExecutionTimePolymorphicPractice;
 import com.better.sparrow.javaBasiceKnowledgePractice.PolymorphicPractice;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class mainTest {
 
     public static void main(String[] args) {
+        List<Item> itemsList = Arrays.asList(
+                new Item("TF001","TFA" ,10, new BigDecimal("9.99"),"HKD"),
+                new Item("TF001","TFA",20, new BigDecimal("19.99"),"HKD"),
+                new Item("TF001","TFA", 10, new BigDecimal("29.99"),"HKD"),
+                new Item("TF002","TFA" ,11, new BigDecimal("8.98"),"USD"),
+                new Item("TF002","TFA",22, new BigDecimal("17.99"),"USD"),
+                new Item("TF002","TFA", 13, new BigDecimal("27.99"),"USD"),
+                new Item("TF003","TFA" ,14, new BigDecimal("2.99"),"USD"),
+                new Item("TF003","TFA",25, new BigDecimal("1.99"),"USD"),
+                new Item("TF003","TFA", 16, new BigDecimal("32.99"),"USD")
+        );
 
-//        int arr[]={3,1,5,7,2,4,9,6};
-//        System.out.println("1.测试为List中的String元素按字母排序的方法实现");
-//        ListSortPractice listSortByString = new ListSortPractice();
-//        listSortByString.sortByList();
+        Map<String, Map<String, Integer>> itemMap = itemsList.stream().collect(
+                Collectors.groupingBy(Item::getPartnerName,Collectors.groupingBy(Item::getSubpartnerName,Collectors.summingInt(Item::getCount))));
 
-//        System.out.println("2.测试类被加载的时候成分的执行顺序，包括静态代码块，构造代码块，构造方法");
-//        ATestPractice executionOrder = new ATestPractice();
-//        executionOrder.callExecutionOrderPractice();
+        System.out.println("test: " + itemMap.get("TF001").get("TFA"));
 
-//        System.out.println("3.子类继承父类后当子类被加载的时候类成分执行顺序，包括静态代码块，构造代码块，构造方法");
-//        BTestPractice BTestPractice = new BTestPractice();
-//        BTestPractice.callExtendClassExecutionOrderPractice();
+        System.out.println("M group by Map: " + itemMap);
 
-//        System.out.println("4.把String类型的数组按字母排序");
-//        ArrayStringshortPractice arrayStringshortPractice = new ArrayStringshortPractice();
-//        arrayStringshortPractice.stringShort();
+        Object integerMap = itemsList.stream().collect(Collectors.groupingBy(Item::getPartnerNameAndSubpartner,Collectors.summingInt(Item::getCount)));
 
-//        System.out.println("5.简单的冒泡排序，时间复杂度是O(n的2次方)");
-//        BubbleSortPractice bubbleSortPractice = new BubbleSortPractice();
-//        bubbleSortPractice.bubbleSort();
+        System.out.println("M group by Map2: " + integerMap);
+        //list sample:
+//        https://blog.csdn.net/u013871100/article/details/73430397
+    }
 
-//        System.out.println("6.直接插入排序算法");
-//        StraightInsertionSortingParctice insertionSorting = new StraightInsertionSortingParctice();
-//        insertionSorting.straightInsertionSorting();
-
-//        System.out.println("7.简单选择排序");
-//        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
-//        simpleSelectionSort.selectSort();
-//
-//        for(int i = 0 ; i< 10 ;i++){
-//            System.out.println(i);
-//            if(i == 2){
-//                break;
-//            }
-//        }
-//        System.out.println("7.简单选择排序");
-//        SimpleSelectionSortPractice simpleSelectionSort = new SimpleSelectionSortPractice();
-//        simpleSelectionSort.selectSort();
-
-
-//        AscendingSortForArraysPractice ascendingSort = new AscendingSortForArraysPractice();
-//        ascendingSort.ascendingSort();
-//        PolymorphicPractice.BaseClass bc = new PolymorphicPractice.BaseClass();
-//        System.out.println(bc.books);
-//        bc.base();
-//        bc.test();
-//        PolymorphicPractice.SubClass sc = new PolymorphicPractice.SubClass();
-//        System.out.println(sc.books);
-//        sc.base();
-//        sc.test();
-//        sc.sub();
-        CompileTimePolymorphicPractice compileTimePolymorphicPractice = new CompileTimePolymorphicPractice();
-        compileTimePolymorphicPractice.testCompileTimePolymorphic();
-
-        ExecutionTimePolymorphicPractice executionTimePolymorphicPractice = new ExecutionTimePolymorphicPractice();
-        executionTimePolymorphicPractice.executiuonTime();
-        executionTimePolymorphicPractice.executiuonTime("参数1");
-        executionTimePolymorphicPractice.executiuonTime("参数1","参数2");
-        executionTimePolymorphicPractice.executiuonTime("参数1","参数2","参数3");
+    private static String fetchGroupKey(Item detail){
+        return detail.getPartnerName() + detail.getSubpartnerName();
     }
 
 }
