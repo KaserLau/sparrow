@@ -6,45 +6,45 @@ import com.better.sparrow.javaBasiceKnowledgePractice.ExecutionTimePolymorphicPr
 import com.better.sparrow.javaBasiceKnowledgePractice.PolymorphicPractice;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class mainTest {
 
-    public static void main(String[] args) {
-        List<Item> itemsList = Arrays.asList(
-                new Item("TF001","TFA" ,10, new BigDecimal("9.99"),"HKD"),
-                new Item("TF001","TFA",20, new BigDecimal("19.99"),"HKD"),
-                new Item("TF001","TFA", 10, new BigDecimal("29.99"),"HKD"),
-                new Item("TF002","TFA" ,11, new BigDecimal("8.98"),"USD"),
-                new Item("TF002","TFA",22, new BigDecimal("17.99"),"USD"),
-                new Item("TF002","TFA", 13, new BigDecimal("27.99"),"USD"),
-                new Item("TF003","TFA" ,14, new BigDecimal("2.99"),"USD"),
-                new Item("TF003","TFA",25, new BigDecimal("1.99"),"USD"),
-                new Item("TF003","TFA", 16, new BigDecimal("32.99"),"USD")
-        );
-
-        Map<String, Map<String, Integer>> itemMap = itemsList.stream().collect(
-                Collectors.groupingBy(Item::getPartnerName,Collectors.groupingBy(Item::getSubpartnerName,Collectors.summingInt(Item::getCount))));
-
-        System.out.println("test: " + itemMap.get("TF001").get("TFA"));
-
-        System.out.println("M group by Map: " + itemMap);
-
-        Object integerMap = itemsList.stream().collect(Collectors.groupingBy(Item::getPartnerNameAndSubpartner,Collectors.summingInt(Item::getCount)));
-
-        System.out.println("M group by Map2: " + integerMap);
-        //list sample:
-//        https://blog.csdn.net/u013871100/article/details/73430397
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        List<Date> days = new ArrayList<>();
+        Date date1 = sdf.parse("2019-01-02");
+        Date date2 = sdf.parse("2019-01-03");
+        Date date3 = sdf.parse("2019-01-01");
+        Date date4 = sdf.parse("2019-01-07");
+        Date date5 = sdf.parse("2019-01-04");
+        Date date6 = sdf.parse("2019-01-05");
+        days.add(date1);
+        days.add(date2);
+        days.add(date3);
+        days.add(date4);
+        days.add(date5);
+        days.add(date6);
+        int localEmdPosition = 0 ;
+        Date value = new Date();
+        //"2019-01-02" , "2019-01-03" , "2019-01-01" , "2019-01-07" , "2019-01-04" , "2019-01-05"
+        for(int i = 0; i<days.size()-1;i++){
+            Date test1 = days.get(i);
+            value = days.get(i);
+            for (int j = i+1; j < days.size()-1;j++){
+                Date test2 = days.get(j);
+                if (test1.after(test2)){//test1 > test2
+                    value = days.get(j);
+                    localEmdPosition = j;
+                    System.out.println("value " + value +":"+ "localEmdPosition " + localEmdPosition);
+                }
+            }
+        }
+        System.out.println(">--------------> localEmdPosition = " + localEmdPosition);
     }
-
-    private static String fetchGroupKey(Item detail){
-        return detail.getPartnerName() + detail.getSubpartnerName();
-    }
-
 }
 
 
