@@ -1,4 +1,4 @@
-package com.better.sparrow.basicKnowledgePractice;
+package com.better.sparrow.algorithmPractice;
 
 import java.text.Collator;
 import java.util.ArrayList;

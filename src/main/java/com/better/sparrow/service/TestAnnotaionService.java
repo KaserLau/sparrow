@@ -1,4 +1,4 @@
-package com.better.sparrow.handle;
+package com.better.sparrow.service;
 
 /**
  * @Author : Kaser.Lau
@@ -6,5 +6,5 @@ package com.better.sparrow.handle;
  * @Create Date : 5:55 PM 2018/6/30
  * @Modified By :
  */
-public class TestAnnotaionHandle {
+public class TestAnnotaionService {
 }

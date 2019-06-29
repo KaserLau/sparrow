@@ -8,8 +8,9 @@ public class InitializeLog4jConfig {
     static {
         try{
             //初始化log4j
-            //getPath,获取的是log4j.properties文件所在的绝对路径,也可以设置为相对路径。
-            String log4jPropertiesPath = "/Users/kaser.lau/IdeaProjects/sparrow/src/main/resources/log4j.properties";
+            //getPath,获取的是log4j.properties文件所在的绝对路径或者相对路径。
+            String log4jPropertiesPath = "../resources/log4j.properties";
+//            String log4jPropertiesPath = "/Users/kaser.lau/IdeaProjects/sparrow/src/main/resources/log4j.properties";
             String log4jPath = InitializeLog4jConfig.class.getClassLoader().getResource("").getPath()+log4jPropertiesPath;
 //            System.out.println("Initialize Log4j...");
 //            System.out.println("The path is "+ log4jPath);

@@ -1,0 +1,28 @@
+server:
+  port: 8080
+###########################################################################
+####### Data source setting
+###########################################################################
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sparrow?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+    ## update , The database table is updated when the mapping entity changes
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+
+
+
+
